@@ -1,0 +1,21 @@
+
+  Type Parameter :
+  1. T -> Type
+  2. E -> Element
+  3. K -> Key
+  4. N -> Number
+  5. V -> Value
+Wildcards in java Generics
+? -> Wildcard element -> Any Type -> unknown type
+<? extends People>  -> this means ? can be child class of People class
+
+=> UpperBound WildCards
+
+<? extends People>  -- It restricts the unknown types to be a specific type only
+
+
+Unbounded WildCards
+List<?> --> Un bounded : This represents the list of unknown types
+
+=> Lower Bounded WildCards
+List<? super Integer>   -> unknown type can be can be parent of Integer 
