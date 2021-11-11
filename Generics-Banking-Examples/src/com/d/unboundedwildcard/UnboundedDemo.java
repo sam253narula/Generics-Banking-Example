@@ -1,6 +1,7 @@
 package com.d.unboundedwildcard;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import com.a.classdemo.Account;
@@ -38,8 +39,8 @@ public class UnboundedDemo {
 		hdfcBank.setBankIdentificationCode("HDFCINBBXXX");
 		hdfcBank.setName("HDFC Bank");
 
-		Bank<Integer> iciciBank = new Bank<>();
-		iciciBank.setBankIdentificationCode(1234);
+		Bank<String> iciciBank = new Bank<>();
+		iciciBank.setBankIdentificationCode("1234");
 		iciciBank.setName("ICICI Bank");
 		
 		//Creating Accounts
@@ -52,22 +53,21 @@ public class UnboundedDemo {
 		account_2.setOwnerName("Saif Patel");
 		
 		//Creating Banks and its account objects
-		BankAndItsAccounts<Bank, Account> hdfcBankAndItsAccounts = new BankAndItsAccounts<Bank, Account>();
+		BankAndItsAccounts<Bank, Account> hdfcBankAndItsAccounts = new BankAndItsAccounts();
 		hdfcBankAndItsAccounts.setBank(hdfcBank);
-		hdfcBankAndItsAccounts.setAccount(account_1);
+		hdfcBankAndItsAccounts.setAccounts(Arrays.asList(account_1));
 		
-		BankAndItsAccounts<Bank, Account> iciciBankAndItsAccounts = new BankAndItsAccounts<Bank, Account>();
-		hdfcBankAndItsAccounts.setBank(iciciBank);
-		hdfcBankAndItsAccounts.setAccount(account_2);
+		BankAndItsAccounts<Bank, Account> iciciBankAndItsAccounts = new BankAndItsAccounts();
+		iciciBankAndItsAccounts.setBank(iciciBank);
+		iciciBankAndItsAccounts.setAccounts(Arrays.asList(account_2));
 		
 		//Adding the mapped bank and its account to bankAndItsAccounts list
 		bankAndItsAccounts.add(hdfcBankAndItsAccounts);
-		bankAndItsAccounts.add(hdfcBankAndItsAccounts);
+		bankAndItsAccounts.add(iciciBankAndItsAccounts);
 
 		// Initializing the Generic Object printer
-		GenericObjectPrinter genericObjectPrinter = new GenericObjectPrinter();
-		genericObjectPrinter.printList(bankAndItsAccounts);
-
+	//	GenericObjectPrinter genericObjectPrinter = new GenericObjectPrinter();
+		unboundedWildCard.printTheList(bankAndItsAccounts);
 		
 	}
 }

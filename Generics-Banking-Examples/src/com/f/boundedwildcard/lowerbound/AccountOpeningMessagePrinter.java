@@ -9,8 +9,9 @@ import java.util.List;
 
 //Lower Bound Wildcard example
 public class AccountOpeningMessagePrinter {
-
-	public void print(List<? super Account> accounts) {
+// Method argument list can be list of any class which is SavingAccount or its parent or its parent parent etc
+	public void print(List<? super SavingAccount> accounts) {
+		//System.out.println(accounts);
 		for (Object account : accounts) {
 			System.out.println(account.toString());
 		}

@@ -1,5 +1,7 @@
 package com.a.classdemo;
 
+import java.util.List;
+
 /**
  * @author Samarth Narula
  * 
@@ -8,7 +10,7 @@ package com.a.classdemo;
 public class BankAndItsAccounts<T, U> {
 
 	private T bank;
-	private U account;
+	private List<U> accounts;
 
 	public T getBank() {
 		return bank;
@@ -18,17 +20,20 @@ public class BankAndItsAccounts<T, U> {
 		this.bank = bank;
 	}
 
-	public U getAccount() {
-		return account;
+	public List<U> getAccounts() {
+		return accounts;
 	}
 
-	public void setAccount(U account) {
-		this.account = account;
+	public void setAccounts(List<U> accounts) {
+		this.accounts = accounts;
 	}
 
 	@Override
 	public String toString() {
-		return "Bank And Its Accounts [bank=" + bank + ", account=" + account + "]";
+		return "BankAndItsAccounts [bank=" + bank + ", accounts=" + accounts + "]";
 	}
+
+
+
 
 }

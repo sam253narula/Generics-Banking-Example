@@ -1,5 +1,7 @@
 package com.a.classdemo;
 
+import java.util.Arrays;
+
 /**
  * 
  * @author Samarth Narula
@@ -23,6 +25,13 @@ public class AccountGenClassDemo {
 		Account<Integer> account_2 = new Account<Integer>();
 		account_2.setNumber(2);
 		account_2.setOwnerName("Saif Patel");
-		System.out.printf("Account number : %s , Account owner name: %s", account_2.getNumber(), account_2.getOwnerName());		
+		System.out.printf("Account number : %s , Account owner name: %s", account_2.getNumber(), account_2.getOwnerName());	
+		
+		BankAndItsAccounts<String, Account<String>> bankAndItsAccounts =  new BankAndItsAccounts<String, Account<String>>();
+		bankAndItsAccounts.setBank("Hdfc Bank");
+		bankAndItsAccounts.setAccounts(Arrays.asList(account_1));
+		System.out.println();
+		System.out.println(bankAndItsAccounts);
+		
 	}
 }
